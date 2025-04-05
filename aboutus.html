@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | VeganRecipe</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Apply saved dark mode on page load
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            darkBg: '#1a1a1a',
+            darkText: '#f0f0f0'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-gray-900 dark:bg-darkBg dark:text-darkText font-sans">
+
+  <!-- Navbar -->
+  <nav class="p-6 flex justify-between items-center bg-white shadow dark:bg-gray-900">
+    <div>
+      <a href="index.html" class="text-teal-600 text-xl font-bold">🌱 VeganRecipe</a>
+      <div class="text-sm text-gray-700 dark:text-gray-300">Delicious Plant-Based Creations</div>
+    </div>
+    <div class="flex items-center space-x-6 text-sm text-gray-700 dark:text-white">
+      <a href="index.html">Home</a>
+      <a href="recipes.html">Recipes</a>
+      <a href="submit.html">Submit Recipe</a>
+      <a href="favorite.html">Favorites</a>
+      <a href="aboutus.html" class="font-semibold text-green-600">About</a>
+      <a href="contact-us.html">Contact</a>
+      <button id="darkToggle" class="bg-gray-200 text-gray-800 px-3 py-1 rounded hover:bg-gray-300 dark:bg-gray-700 dark:text-white">
+        🌙
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="w-full h-[20rem] bg-cover bg-center" style="background-image: url(Green\ Minimalist\ Plants\ March\ Calendar\ Desktop\ Wallpaper.png);">
+    <div class="bg-black bg-opacity-40 w-full h-full flex items-center justify-center">
+      <h1 class="text-4xl font-bold text-white">About Us</h1>
+    </div>
+  </section>
+
+  <!-- About Content -->
+  <section class="max-w-4xl mx-auto px-6 py-12 space-y-10">
+    <!-- Your Image and Bio -->
+    <div class="flex flex-col sm:flex-row items-center gap-8">
+      <img src="WhatsApp Image 2025-03-18 at 07.51.30_273f96ce.jpg" alt="Aditi Chitnis" class="w-40 h-40 object-cover rounded-full border-4 border-green-600 shadow-lg">
+      <p class="text-lg text-gray-700 dark:text-gray-300">
+        Hi! I'm <strong class="text-green-700">Aditi Chitnis</strong>, the creator behind VeganRecipe. I’m a passionate techie who believes in combining creativity, wellness, and innovation. I love designing aesthetic, user-friendly websites and I'm on a mission to make plant-based cooking feel magical and accessible for everyone!
+      </p>
+    </div>
+
+    <!-- Vision & Mission -->
+    <div>
+      <h2 class="text-2xl font-bold mb-4 text-green-700">🌿 Our Vision & Mission</h2>
+      <p class="text-gray-700 dark:text-gray-300 text-lg">
+        VeganRecipe is more than just a recipe hub—it's a lifestyle movement. We envision a world where plant-based eating becomes the norm, not the exception. Our mission is to empower home cooks, students, and food lovers with simple, delicious, and nutritious vegan recipes that are easy to follow and joyful to share. Together, we’re making compassionate choices and inspiring change—one recipe at a time.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white text-center py-6 text-sm text-gray-600 dark:bg-black dark:text-white">
+    🪴 Made with love & plants — VeganRecipe © 2025
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("darkToggle");
+    toggle.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+    });
+  </script>
+  <script>
+    const toggleButton = document.getElementById('darkToggle');
+  toggleButton.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

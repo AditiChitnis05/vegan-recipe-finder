@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Favorites | VeganRecipe</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Apply saved dark mode on page load
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            darkBg: '#1a1a1a',
+            darkText: '#f0f0f0'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-gray-900 dark:bg-darkBg dark:text-darkText font-sans">
+
+  <!-- Navbar -->
+  <nav class="p-6 flex justify-between items-center bg-white shadow dark:bg-gray-900">
+    <div>
+      <a href="index.html" class="text-teal-600 text-xl font-bold">🌱 VeganRecipe</a>
+      <div class="text-sm text-gray-700 dark:text-gray-300">Delicious Plant-Based Creations</div>
+    </div>
+    <div class="flex items-center space-x-6 text-sm text-gray-700 dark:text-white">
+      <a href="index.html">Home</a>
+      <a href="recipes.html">Recipes</a>
+      <a href="submit.html">Submit Recipe</a>
+      <a href="favourite.html">Favorites</a>
+      <a href="aboutus.html">About</a>
+      <a href="contact-us.html">Contact</a>
+      <button id="darkToggle" class="bg-gray-200 text-gray-800 px-3 py-1 rounded hover:bg-gray-300 dark:bg-gray-700 dark:text-white">
+        🌙
+      </button>
+    </div>
+  </nav>
+<body class="bg-green-40 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+
+  <div class="max-w-3xl mx-auto p-6 mt-10 bg-white dark:bg-gray-800 rounded-2xl shadow-lg">
+    <h1 class="text-3xl font-bold mb-4 text-center">🥑 Submit Your Vegan Recipe</h1>
+    <form id="recipeForm" class="space-y-4">
+      <div>
+        <label class="block font-semibold mb-1">Recipe Title</label>
+        <input type="text" class="w-full p-3 border rounded-xl dark:bg-gray-700" placeholder="e.g. Vegan Pasta Primavera" required />
+      </div>
+      
+      <div>
+        <label class="block font-semibold mb-1">Upload Image</label>
+        <input type="file" accept="image/*" class="w-full p-2 border rounded-xl dark:bg-gray-700" required />
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Short Description</label>
+        <textarea class="w-full p-3 border rounded-xl dark:bg-gray-700" rows="2" placeholder="A light, creamy pasta loaded with spring veggies!" required></textarea>
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Ingredients</label>
+        <textarea class="w-full p-3 border rounded-xl dark:bg-gray-700" rows="4" placeholder="List ingredients, one per line" required></textarea>
+      </div>
+
+      <div>
+        <label class="block font-semibold mb-1">Steps</label>
+        <textarea class="w-full p-3 border rounded-xl dark:bg-gray-700" rows="4" placeholder="Describe the cooking steps..." required></textarea>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="w-1/2">
+          <label class="block font-semibold mb-1">Cook Time (mins)</label>
+          <input type="number" class="w-full p-3 border rounded-xl dark:bg-gray-700" placeholder="e.g. 30" required />
+        </div>
+        <div class="w-1/2">
+          <label class="block font-semibold mb-1">Category</label>
+          <select class="w-full p-3 border rounded-xl dark:bg-gray-700" required>
+            <option value="">Select</option>
+            <option>Breakfast</option>
+            <option>Lunch</option>
+            <option>Dinner</option>
+            <option>Snack</option>
+            <option>Dessert</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl transition shadow hover:shadow-xl w-full mt-4">
+        ✨ Submit Recipe
+      </button>
+    </form>
+
+    <p class="mt-6 text-center text-sm">
+      <a href="index.html" class="text-green-600 hover:underline">← Back to Home</a>
+    </p>
+  </div>
+  <script>
+ const toggleButton = document.getElementById('darkToggle');
+  toggleButton.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

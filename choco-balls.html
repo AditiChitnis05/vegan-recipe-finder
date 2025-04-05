@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Choco - Date Balls Recipe | VeganRecipe</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Apply saved dark mode on page load
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            darkBg: '#1a1a1a',
+            darkText: '#f0f0f0'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-gray-900 dark:bg-darkBg dark:text-darkText font-sans">
+  <!-- Navbar -->
+  <nav class="p-6 flex justify-between items-center bg-white shadow dark:bg-gray-900">
+    <div>
+      <a href="index.html" class="text-teal-600 text-xl font-bold">🌱 VeganRecipe</a>
+      <div class="text-sm text-gray-700 dark:text-gray-300">Delicious Plant-Based Creations</div>
+    </div>
+    <div class="flex items-center space-x-6 text-sm text-gray-700 dark:text-white">
+      <a href="index.html">Home</a>
+      <a href="recipes.html">Recipes</a>
+      <a href="submit.html">Submit Recipe</a>
+      <a href="favourite.html">Favorites</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="contact-us.html">Contact</a>
+      <button id="darkToggle" class="bg-gray-200 text-gray-800 px-3 py-1 rounded hover:bg-gray-300 text-sm dark:bg-gray-700 dark:text-white">
+        🌙
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Image -->
+  <section class="w-full h-72 bg-cover bg-center" style="background-image: url('image20.jpg');">
+
+    <div class="bg-black bg-opacity-40 w-full h-full flex items-center justify-center">
+      <h1 class="text-4xl font-bold text-white">Choco-Date Balls Recipe</h1>
+    </div>
+  </section>
+
+
+  <!-- Recipe Content -->
+  <main class="max-w-4xl mx-auto px-6 py-12 space-y-8">
+
+    <!-- Intro -->
+    <section>
+      <h2 class="text-xl font-semibold mb-2">About this recipe</h2>
+      <p class="text-gray-700 dark:text-gray-300">
+        These Choco-Date Energy Balls are the perfect on-the-go snack! Packed with natural sweetness from dates, healthy fats from nuts, and a rich cocoa flavor — they’re easy to make, kid-friendly, and totally satisfying.
+      </p>
+    </section>
+
+    <!-- Ingredients -->
+    <section>
+      <h2 class="text-xl font-semibold mb-4">📝 Ingredients</h2>
+      <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+        <li>1 cup pitted dates (soft)</li>
+        <li>1/2 cup almonds or cashews</li>
+        <li>2 tbsp cocoa powder</li>
+        <li>1 tbsp chia seeds (optional)</li>
+        <li>1 tbsp coconut oil</li>
+        <li>Pinch of salt</li>
+        <li>Shredded coconut or cocoa powder (for rolling)</li>
+      </ul>
+    </section>
+
+    <!-- Instructions -->
+    <section>
+      <h2 class="text-xl font-semibold mb-4">👩‍🍳 Instructions</h2>
+      <ol class="list-decimal list-inside space-y-2 text-gray-700 dark:text-gray-300">
+        <li>In a food processor, pulse the nuts until crumbly.</li>
+        <li>Add dates, cocoa powder, chia seeds, coconut oil, and salt. Blend until it forms a sticky dough.</li>
+        <li>Roll mixture into small balls with your hands.</li>
+        <li>Optional: Roll balls in shredded coconut or cocoa powder for coating.</li>
+        <li>Chill in the fridge for 15–20 minutes before serving. Store leftovers in an airtight container.</li>
+      </ol>
+    </section>
+
+    <!-- Tips / Notes -->
+    <section>
+      <h2 class="text-xl font-semibold mb-4">✨ Tips & Variations</h2>
+      <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+        <li>Use peanut butter for added flavor & stickiness.</li>
+        <li>Add protein powder for a post-workout version.</li>
+        <li>Swap nuts with seeds for a nut-free option.</li>
+      </ul>
+    </section>
+
+    <!-- Tags / Time Info -->
+    <section class="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-400">
+      <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full">🍬 Snack</span>
+      <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full">⏱️ 15 mins</span>
+      <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full">🌱 Vegan</span>
+      <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full">🌾 Gluten-Free</span>
+    </section>
+
+<!-- Back Button -->
+<div class="text-center mb-12">
+  <a href="recipes.html" class="inline-block bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition">⬅ Back to Recipes</a>
+</div>
+
+  <!-- Footer -->
+  <footer class="bg-white text-center py-6 text-sm text-gray-600 mt-16 dark:bg-black dark:text-gray-400">
+    🪴 Made with love & plants — VeganRecipe © 2025
+  </footer>
+
+  <script>
+    const darkToggle = document.getElementById("darkToggle");
+    darkToggle.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+    });
+  </script>
+<script>
+   const toggleButton = document.getElementById('darkToggle');
+  toggleButton.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+</script>
+
+</body>
+</html>

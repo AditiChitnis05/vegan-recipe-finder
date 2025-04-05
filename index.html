@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vegan Recipe Finder</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Apply saved dark mode on page load
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <script>
+    
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            darkBg: '#1a1a1a',
+            darkText: '#f0f0f0'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .hero {
+      background-image: url(Green\ And\ Yellow\ Simple\ Healthy\ Eating\ Presentation.png);
+      background-size: cover;
+      background-position: center;
+      height: 500px;
+      position: relative;
+    }
+
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+    }
+
+    .search-bar {
+      max-width: 600px;
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 2px solid #fff;
+      background-color: rgba(255, 255, 255, 0.7);
+      color: #333;
+    }
+
+    .typewriter {
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 3px solid white;
+      font-size: 24px;
+      margin-top: 15px;
+      font-weight: bold;
+      width: 0;
+      animation: typing 3s steps(40, end) forwards, blink .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .fact-strip {
+      animation: scroll-left 40s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      from {
+        transform: translateX(100%);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+</head>
+<body class="font-sans bg-white dark:bg-darkBg dark:text-darkText">
+
+  <!-- Navbar -->
+  <nav class="p-6 flex justify-between items-center bg-white shadow dark:bg-gray-900">
+    <div>
+      <div class="text-teal-600 text-xl font-bold">🌱 VeganRecipe</div>
+      <div class="text-sm text-gray-700 dark:text-gray-300">Delicious Plant-Based Creations</div>
+    </div>
+    <div class="flex items-center space-x-6 text-sm text-gray-700 dark:text-white">
+      <a href="index.html">Home</a>
+      <a href="recipes.html">Recipes</a>
+      <a href="submit.html">Submit Recipe</a>
+      <a href="favourite.html">Favorites</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="contact-us.html">Contact</a>
+      <button id="darkToggle" class="bg-gray-200 text-gray-800 px-3 py-1 rounded hover:bg-gray-300 text-sm dark:bg-gray-700 dark:text-white">
+        🌙
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <a href="recipes.html" class="search-bar block text-center font-semibold text-green-800 hover:text-green-900 bg-white bg-opacity-80 hover:bg-opacity-100 transition duration-300 shadow-lg">
+        🔍 Explore Vegan Recipes
+      </a>
+      
+      <h1 class="text-xl sm:text-2xl md:text-3xl text-white font-bold mt-4">
+        <span id="typewriter-text"></span><span class="border-r-2 border-white ml-1 animate-pulse"></span>
+      </h1>
+      
+    </div>
+  </section>
+
+  
+
+  <!-- What is Vegan Section -->
+  <section class="question-section bg-gray-100 py-16 text-center dark:bg-black">
+    <h2 class="text-3xl font-bold text-green-700 mb-6">What is Vegan?</h2>
+    <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed dark:text-darkText">
+      Veganism is a lifestyle and diet choice that excludes all animal products. This means avoiding meat, dairy, eggs, and other ingredients derived from animals. People choose veganism for many reasons—health, ethics, sustainability, and love for animals.
+    </p>
+  </section>
+
+  <!-- History Section -->
+  <section class="bg-white py-16 text-center dark:bg-darkBg">
+    <h2 class="text-3xl font-bold text-teal-600 mb-6">A Brief History of Veganism</h2>
+    <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed dark:text-darkText">
+      The term "vegan" was coined in 1944 by Donald Watson and a group of non-dairy vegetarians in the UK who formed the Vegan Society. However, plant-based diets have existed for centuries in cultures around the world—from ancient Indian philosophies of <i>ahimsa</i> (non-violence), to Buddhist and Jain traditions that emphasize compassion toward all living beings.
+    </p>
+    <p class="text-lg text-gray-700 max-w-3xl mx-auto mt-6 leading-relaxed dark:text-darkText">
+      Today, veganism has become a global movement driven by awareness of animal welfare, climate change, and the benefits of whole-food, plant-based nutrition.
+    </p>
+  </section>
+
+  <!-- Trending Tags -->
+  <section class="py-12 bg-white text-center dark:bg-black">
+    <h3 class="text-2xl font-bold text-green-700 mb-4">🌟 Trending Tags</h3>
+    <div class="flex flex-wrap justify-center gap-3 text-sm">
+      <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full cursor-pointer hover:bg-green-200 dark:bg-green-900 dark:text-green-100">#QuickMeals</span>
+      <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full cursor-pointer hover:bg-green-200 dark:bg-green-900 dark:text-green-100">#HighProtein</span>
+      <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full cursor-pointer hover:bg-green-200 dark:bg-green-900 dark:text-green-100">#Breakfast</span>
+      <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full cursor-pointer hover:bg-green-200 dark:bg-green-900 dark:text-green-100">#GlutenFree</span>
+      <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full cursor-pointer hover:bg-green-200 dark:bg-green-900 dark:text-green-100">#VeganDesserts</span>
+    </div>
+  </section>
+
+  <!-- Newsletter Signup -->
+  <section class="py-12 bg-green-100 text-center dark:bg-green-900">
+    <h3 class="text-2xl font-bold text-green-800 mb-4 dark:text-white">💌 Join Our Plant-Based Tribe</h3>
+    <p class="text-sm text-gray-700 mb-6 dark:text-green-100">Get weekly recipes, kitchen hacks, and cozy inspiration straight to your inbox.</p>
+    <div class="flex justify-center">
+      <input type="email" placeholder="Your email address" class="px-4 py-2 rounded-l-lg border border-green-300 focus:outline-none w-64">
+      <button class="bg-green-600 text-white px-4 py-2 rounded-r-lg hover:bg-green-700 transition">Subscribe</button>
+    </div>
+  </section>
+
+  <!-- Back to Top Button -->
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+    class="fixed bottom-5 right-5 bg-green-600 text-white p-3 rounded-full shadow-md hover:bg-green-700 transition z-50">
+    ⬆️
+  </button>
+
+  <!-- Footer -->
+  <footer class="bg-white text-center py-6 text-sm text-gray-600 mt-16 dark:bg-black dark:text-white">
+    🪴 Made with love & plants — VeganRecipe © 2025
+  </footer>
+
+ 
+  <script>
+    const phrases = ["Discover Healthy, Plant-Based Recipes"];
+    let currentPhrase = 0;
+    let currentLetter = 0;
+    let isDeleting = false;
+    const textEl = document.getElementById("typewriter-text");
+  
+    function typeLoop() {
+      const current = phrases[currentPhrase];
+      if (isDeleting) {
+        textEl.textContent = current.substring(0, currentLetter--);
+        if (currentLetter < 0) {
+          isDeleting = false;
+          currentLetter = 0;
+          setTimeout(typeLoop, 1000); // Pause before typing again
+        } else {
+          setTimeout(typeLoop, 60);
+        }
+      } else {
+        textEl.textContent = current.substring(0, currentLetter++);
+        if (currentLetter > current.length) {
+          isDeleting = true;
+          setTimeout(typeLoop, 1500); // Pause when done typing
+        } else {
+          setTimeout(typeLoop, 100);
+        }
+      }
+    }
+  
+    typeLoop();
+  </script>
+  <script>
+    const toggleButton = document.getElementById('darkToggle');
+    toggleButton.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

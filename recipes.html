@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vegan Recipes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Apply saved dark mode on page load
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            darkBg: '#1a1a1a',
+            darkText: '#f0f0f0'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 dark:bg-darkBg text-gray-900 dark:text-darkText">
+
+  <!-- Navbar -->
+  <nav class="p-6 flex justify-between items-center bg-white shadow dark:bg-gray-900">
+    <div>
+      <div class="text-teal-600 text-xl font-bold">🌱 VeganRecipe</div>
+      <div class="text-sm text-gray-700 dark:text-gray-300">Delicious Plant-Based Creations</div>
+    </div>
+    <div class="flex items-center space-x-6 text-sm text-gray-700 dark:text-white">
+      <a href="index.html">Home</a>
+      <a href="recipes.html">Recipes</a>
+      <a href="submit.html">Submit Recipe</a>
+      <a href="favourite.html">Favorites</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="contact-us.html">Contact</a>
+      <button id="darkToggle" class="bg-gray-200 text-gray-800 px-3 py-1 rounded hover:bg-gray-300 text-sm dark:bg-gray-700 dark:text-white">
+        🌙
+      </button>
+    </div>
+  </nav>
+
+  <!-- Search Bar -->
+  <div class="flex justify-center my-6 px-4">
+    <input type="text" id="searchInput" placeholder="Search recipes..." class="p-2 border rounded w-full max-w-md">
+
+  </div>
+
+  <!-- Recipe Grid -->
+  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-6 pb-16" id="recipeGrid">
+    
+    <!-- START of 20 Vegan Recipe Cards -->
+    <a href="#" class="recipe-card block bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-4">
+      <img src=image-1.jpg alt="Avocado Toast" class="rounded-xl w-full h-40 object-cover mb-3">
+      <h2 class="font-semibold text-lg">Avocado Toast</h2>
+      <p class="text-sm text-gray-600 dark:text-gray-300">Quick, creamy & full of good fats</p>
+      <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">⏱️ 10 mins | 🥑 Breakfast</div>
+      <button class="save-btn mt-3 text-sm text-green-600 hover:underline">❤️ Save to Fav</button>
+
+    </a>
+
+    <a href="#" class="recipe-card block bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-4">
+      <img src=image2.jpg alt="Vegan Pancakes" class="rounded-xl w-full h-40 object-cover mb-3">
+      <h2 class="font-semibold text-lg">Fluffy Vegan Pancakes</h2>
+      <p class="text-sm text-gray-600 dark:text-gray-300">Perfect Sunday brunch stack</p>
+      <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">⏱️ 20 mins | 🥞 Brunch</div>
+      <button class="save-btn mt-3 text-sm text-green-600 hover:underline">❤️ Save to Fav</button>
+
+    </a>
+
+    <a href="#" class="recipe-card block bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-4">
+      <img src=image3.jpg alt="Tofu Stir Fry" class="rounded-xl w-full h-40 object-cover mb-3">
+      <h2 class="font-semibold text-lg">Tofu Stir Fry</h2>
+      <p class="text-sm text-gray-600 dark:text-gray-300">Savory tofu & veggies in garlic sauce</p>
+      <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">⏱️ 25 mins | 🍛 Dinner</div>
+      <button class="save-btn mt-3 text-sm text-green-600 hover:underline">❤️ Save to Fav</button>
+
+    </a>
+
+    <a href="#" class="recipe-card block bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-4">
+      <img src=image4.jpg alt="Vegan Buddha Bowl" class="rounded-xl w-full h-40 object-cover mb-3">
+      <h2 class="font-semibold text-lg">Vegan Buddha Bowl</h2>
+      <p class="text-sm text-gray-600 dark:text-gray-300">Colorful bowl with grains & greens</p>
+      <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">⏱️ 30 mins | 🥗 Lunch</div>
+      <button class="save-btn mt-3 text-sm text-green-600 hover:underline">❤️ Save to Fav</button>
+
+    </a>
+
+    <a href="#" class="recipe-card block bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-4">
+      <img src=image5.jpg alt="Chickpea Curry" class="rounded-xl w-full h-40 object-cover mb-3">
+      <h2 class="font-semibold text-lg">Chickpea Curry</h2>
+      <p class="text-sm text-gray-600 dark:text-gray-300">Spiced Indian-style comfort</p>
+      <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">⏱️ 35 mins | 🍛 Dinner</div>
+      <button class="save-btn mt-3 text-sm text-green-600 hover:underline">❤️ Save to Fav</button>
+
+    </a>
+
+    <a href="#" class="recipe-card block bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-4">
+      <img src="image6.jpg" alt="Vegan Tacos" class="rounded-xl w-full h-40 object-cover mb-3">
+      <h2 class="font-semibold text-lg">Vegan Tacos</h2>
+      <p class="text-sm text-gray-600 dark:text-gray-300">Spiced lentils & fresh toppings</p>
+      <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">⏱️ 20 mins | 🌮 Dinner</div>
+      <button class="save-btn mt-3 text-sm text-green-600 hover:underline">❤️ Save to Fav</button>
+
+    </a>
+
+    <a href="#" class="recipe-card block bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-4">
+      <img src="image7.jpg" alt="Lentil Soup" class="rounded-xl w-full h-40 object-cover mb-3">
+      <h2 class="font-semibold text-lg">Lentil Soup</h2>
+      <p class="text-sm text-gray-600 dark:text-gray-300">Hearty, warm, and nourishing</p>
+      <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">⏱️ 40 mins | 🍲 Dinner</div>
+      <button class="save-btn mt-3 text-sm text-green-600 hover:underline">❤️ Save to Fav</button>
+
+    </a>
+
+    <a href="#" class="recipe-card block bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-4">
+      <img src="image8.jpg" alt="Vegan Mac & Cheese" class="rounded-xl w-full h-40 object-cover mb-3">
+      <h2 class="font-semibold text-lg">Vegan Mac & Cheese</h2>
+      <p class="text-sm text-gray-600 dark:text-gray-300">Creamy cashew cheese sauce</p>
+      <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">⏱️ 30 mins | 🍝 Comfort</div>
+      <button class="save-btn mt-3 text-sm text-green-600 hover:underline">❤️ Save to Fav</button>
+
+    </a>
+
+    <a href="#" class="recipe-card block bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-4">
+      <img src="image9.jpg" alt="Green Smoothie" class="rounded-xl w-full h-40 object-cover mb-3">
+      <h2 class="font-semibold text-lg">Green Smoothie</h2>
+      <p class="text-sm text-gray-600 dark:text-gray-300">Spinach, banana & protein blend</p>
+      <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">⏱️ 5 mins | 🥤 Breakfast</div>
+      <button class="save-btn mt-3 text-sm text-green-600 hover:underline">❤️ Save to Fav</button>
+
+    </a>
+
+    <a href="stuffed.html" class="recipe-card block bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-4">
+      <img src="image10.jpg" alt="Stuffed Peppers" class="rounded-xl w-full h-40 object-cover mb-3">
+      <h2 class="font-semibold text-lg">Stuffed Bell Peppers</h2>
+      <p class="text-sm text-gray-600 dark:text-gray-300">Filled with quinoa & veggies</p>
+      <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">⏱️ 45 mins | 🌶️ Dinner</div>
+      <button class="save-btn mt-3 text-sm text-green-600 hover:underline">❤️ Save to Fav</button>
+
+    </a>
+
+    <!-- Add 10 more cards here (image11.jpg to image20.jpg) with unique names/descriptions -->
+    <!-- For brevity, let me know if you want me to paste those 10 too or if you want to name them yourself -->
+    <a href="#" class="recipe-card block bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-4">
+        <img src="image11.jpg" alt="Vegan Sushi Rolls" class="rounded-xl w-full h-40 object-cover mb-3">
+        <h2 class="font-semibold text-lg">Rainbow Sushi Rolls</h2>
+        <p class="text-sm text-gray-600">Colorful, crunchy & soy-saucy 🍣</p>
+        <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">⏱️ 30 mins | 🍙 Lunch</div>
+        <button class="save-btn mt-3 text-sm text-green-600 hover:underline">❤️ Save to Fav</button>
+
+    </a>
+    
+    <!-- 12 -->
+    <a href="#" class="recipe-card block bg-white  dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-4">
+        <img src="image12.jpg" alt="Zucchini Noodles" class="rounded-xl w-full h-40 object-cover mb-3">
+        <h2 class="font-semibold text-lg">Zoodle Primavera</h2>
+        <p class="text-sm text-gray-600">Low-carb, high-vibe dinner</p>
+        <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">⏱️ 20 mins | 🥒 Light Dinner</div>
+        <button class="save-btn mt-3 text-sm text-green-600 hover:underline">❤️ Save to Fav</button>
+
+    </a>
+    
+    <!-- 13 -->
+    <a href="#" class="recipe-card block bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-4">
+        <img src="image13.png" alt="Vegan Tacos" class="rounded-xl w-full h-40 object-cover mb-3">
+        <h2 class="font-semibold text-lg">Spicy Vegan Tacos</h2>
+        <p class="text-sm text-gray-600">Fiery flavor bombs 🌮</p>
+        <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">⏱️ 25 mins | 🌶️ Dinner</div>
+        <button class="save-btn mt-3 text-sm text-green-600 hover:underline">❤️ Save to Fav</button>
+
+    </a>
+    
+    <!-- 14 -->
+    <a href="#" class="recipe-card block bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-4">
+        <img src="image 14.jpg" alt="Green Smoothie Bowl" class="rounded-xl w-full h-40 object-cover mb-3">
+        <h2 class="font-semibold text-lg">Green Glow Bowl</h2>
+        <p class="text-sm text-gray-600">Nourish your soul (and skin)</p>
+        <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">⏱️ 10 mins | 🥬 Breakfast</div>
+        <button class="save-btn mt-3 text-sm text-green-600 hover:underline">❤️ Save to Fav</button>
+
+    </a>
+    
+    <!-- 15 -->
+    <a href="#" class="recipe-card block bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-4">
+        <img src="image15.jpg" alt="Buddha Bowl" class="rounded-xl w-full h-40 object-cover mb-3">
+        <h2 class="font-semibold text-lg">Buddha Nourish Bowl</h2>
+        <p class="text-sm text-gray-600">Wholesome harmony in a bowl</p>
+        <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">⏱️ 30 mins | 🍚 Balanced Meal</div>
+        <button class="save-btn mt-3 text-sm text-green-600 hover:underline">❤️ Save to Fav</button>
+
+    </a>
+    
+    <!-- 16 -->
+    <a href="#" class="recipe-card block bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-4">
+        <img src="image 16.jpg" alt="Sweet Potato Fries" class="rounded-xl w-full h-40 object-cover mb-3">
+        <h2 class="font-semibold text-lg">Crispy Sweet Potato Fries</h2>
+        <p class="text-sm text-gray-600">Golden, salty & addictive</p>
+        <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">⏱️ 20 mins | 🍟 Snack</div>
+        <button class="save-btn mt-3 text-sm text-green-600 hover:underline">❤️ Save to Fav</button>
+
+    </a>
+    
+    <!-- 17 -->
+    <a href="#" class="recipe-cardblock bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-4">
+        <img src="image 17.jpg" alt="Cauliflower Wings" class="rounded-xl w-full h-40 object-cover mb-3">
+        <h2 class="font-semibold text-lg">Buffalo Cauli-Wings</h2>
+        <p class="text-sm text-gray-600">Crispy, spicy, and crave-worthy</p>
+        <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">⏱️ 35 mins | 🔥 Appetizer</div>
+        <button class="save-btn mt-3 text-sm text-green-600 hover:underline">❤️ Save to Fav</button>
+
+    </a>
+    
+    <!-- 18 -->
+    <a href="#" class="recipe-card block bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-4">
+        <img src="image18.jpg" alt="Vegan Mac and Cheese" class="rounded-xl w-full h-40 object-cover mb-3">
+        <h2 class="font-semibold text-lg">No-Cheese Mac & Cheese</h2>
+        <p class="text-sm text-gray-600">So creamy, no one knows it’s vegan</p>
+        <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">⏱️ 30 mins | 🧀 Comfort</div>
+        
+        <button 
+        class="save-btn mt-3 text-sm text-green-600 hover:underline"
+        data-title="Vegan Mac and Cheese"
+        data-image="image18.jpg"
+        data-description="Moist, rich & dairy-free dessert">
+        ❤️ Save to Fav
+      </button>
+
+
+    </a>
+    
+    <!-- 19 -->
+    <a href="#" class="recipe-card block bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-4">
+        <img src="image19.jpg" alt="Vegan Chocolate Cake" class="rounded-xl w-full h-40 object-cover mb-3">
+        <h2 class="font-semibold text-lg">Dreamy Choco Cake</h2>
+        <p class="text-sm text-gray-600">Moist, rich & dairy-free dessert</p>
+        <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">⏱️ 45 mins | 🍫 Dessert</div>
+      
+        <button 
+        class="save-btn mt-3 text-sm text-green-600 hover:underline"
+        data-title="Dreamy Choco Cake"
+        data-image="image19.jpg"
+        data-description="Moist, rich & dairy-free dessert">
+        ❤️ Save to Fav
+      </button>
+
+    </a>
+    
+    <!-- 20 -->
+    <a href="choco-balls.html" class="recipe-card block bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition p-4">
+        <img src="image20.jpg" alt="Energy Balls" class="rounded-xl w-full h-40 object-cover mb-3">
+        <h2 class="font-semibold text-lg">Choco-Date Energy Balls</h2>
+        <p class="text-sm text-gray-600">Snack smart, glow hard ✨</p>
+        <div class="mt-2 text-xs text-gray-500 dark:text-gray-400">⏱️ 15 mins | 🍬 Snack</div>
+        <button 
+        class="save-btn mt-3 text-sm text-green-600 hover:underline"
+        data-title="Choco-Date Energy Balls"
+        data-image="image20.jpg"
+        data-description="Snack smart, glow hard ✨">
+        ❤️ Save to Fav
+      </button>
+      </a>
+      
+    
+  </section>
+
+  <!-- Back to Top Button -->
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+    class="fixed bottom-5 right-5 bg-green-600 text-white p-3 rounded-full shadow-md hover:bg-green-700 transition z-50">
+    ⬆️
+  </button>
+
+  <!-- Footer -->
+  <footer class="bg-white text-center py-6 text-sm text-gray-600 mt-16 dark:bg-black dark:text-gray-400">
+    🪴 Made with love & plants — VeganRecipe © 2025
+  </footer>
+
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    const recipeCards = document.querySelectorAll(".recipe-card");
+  
+    searchInput.addEventListener("input", function () {
+      const searchTerm = this.value.toLowerCase();
+  
+      recipeCards.forEach(card => {
+        const title = card.querySelector("h2").textContent.toLowerCase();
+        if (title.includes(searchTerm)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  </script>
+  <script>
+    const saveButtons = document.querySelectorAll('.save-btn');
+  
+    saveButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const card = e.target.closest('.recipe-card');
+        const title = card.querySelector('h2').innerText;
+  
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+  
+        if (!favorites.includes(title)) {
+          favorites.push(title);
+          localStorage.setItem('favorites', JSON.stringify(favorites));
+          btn.innerText = '💚 Saved!';
+        } else {
+          btn.innerText = '💚 Already Saved';
+        }
+      });
+    });
+  </script>
+  <script>
+    document.querySelectorAll('.save-btn').forEach(button => {
+      button.addEventListener('click', function (event) {
+        event.preventDefault(); // prevent link wrapping the button from navigating
+  
+        const title = this.dataset.title;
+        const image = this.dataset.image;
+        const description = this.dataset.description;
+  
+        const recipe = { title, image, description };
+  
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+  
+        // Check for duplicates
+        const exists = favorites.some(r => r.title === title);
+        if (!exists) {
+          favorites.push(recipe);
+          localStorage.setItem('favorites', JSON.stringify(favorites));
+          alert(`${title} added to favorites!`);
+        } else {
+          alert(`${title} is already in favorites!`);
+        }
+      });
+    });
+  </script>
+  <script>
+  const toggleButton = document.getElementById('darkToggle');
+  toggleButton.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

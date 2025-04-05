@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stuffed Bell Peppers | VeganRecipe</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Apply saved dark mode on page load
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            darkBg: '#1a1a1a',
+            darkText: '#f0f0f0'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-gray-900 dark:bg-darkBg dark:text-darkText font-sans">
+  <!-- Navbar -->
+  <nav class="p-6 flex justify-between items-center bg-white shadow dark:bg-gray-900">
+    <div>
+      <a href="index.html" class="text-teal-600 text-xl font-bold">🌱 VeganRecipe</a>
+      <div class="text-sm text-gray-700 dark:text-gray-300">Delicious Plant-Based Creations</div>
+    </div>
+    <div class="flex items-center space-x-6 text-sm text-gray-700 dark:text-white">
+      <a href="index.html">Home</a>
+      <a href="recipes.html">Recipes</a>
+      <a href="submit.html">Submit Recipe</a>
+      <a href="favourite.html">Favorites</a>
+      <a href="aboutus.html">About Us</a>
+      <a href="contact-us.html">Contact</a>
+      <button id="darkToggle" class="bg-gray-200 text-gray-800 px-3 py-1 rounded hover:bg-gray-300 text-sm dark:bg-gray-700 dark:text-white">
+        🌙
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Image -->
+  <section class="w-full h-72 bg-cover bg-center" style="background-image: url('image10.jpg');">
+
+    <div class="bg-black bg-opacity-40 w-full h-full flex items-center justify-center">
+      <h1 class="text-4xl font-bold text-white">Stuffed Bell Peppers</h1>
+    </div>
+  </section>
+
+  <!-- Recipe Content -->
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">Colorful bell peppers filled with a hearty mixture of quinoa, black beans, corn, and spices, baked to perfection. A satisfying and nutritious plant-based meal!</p>
+
+    <div class="grid sm:grid-cols-2 gap-10 mb-10">
+      <div>
+        <h2 class="text-2xl font-bold mb-3 text-green-700">🛒 Ingredients</h2>
+        <ul class="list-disc list-inside space-y-2">
+          <li>4 large bell peppers (any color)</li>
+          <li>1 cup cooked quinoa</li>
+          <li>1 can (15 oz) black beans, drained & rinsed</li>
+          <li>1 cup corn kernels</li>
+          <li>1 small onion, diced</li>
+          <li>2 cloves garlic, minced</li>
+          <li>1 tsp cumin, 1/2 tsp chili powder</li>
+          <li>Salt & pepper to taste</li>
+          <li>1 tbsp olive oil</li>
+          <li>Fresh cilantro & lime wedges (optional)</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-2xl font-bold mb-3 text-green-700">📋 Instructions</h2>
+        <ol class="list-decimal list-inside space-y-2">
+          <li>Preheat oven to 375°F (190°C).</li>
+          <li>Slice the tops off the bell peppers and remove seeds.</li>
+          <li>In a pan, heat olive oil. Sauté onion and garlic until fragrant.</li>
+          <li>Add black beans, corn, quinoa, and spices. Cook for 5-7 minutes.</li>
+          <li>Stuff the peppers with the mixture and place them in a baking dish.</li>
+          <li>Cover with foil and bake for 30-35 minutes until peppers are tender.</li>
+          <li>Garnish with cilantro and serve with lime wedges.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm text-center">
+      <div>
+        <div class="text-lg font-semibold text-green-600">Prep Time</div>
+        <div>15 mins</div>
+      </div>
+      <div>
+        <div class="text-lg font-semibold text-green-600">Cook Time</div>
+        <div>35 mins</div>
+      </div>
+      <div>
+        <div class="text-lg font-semibold text-green-600">Servings</div>
+        <div>4</div>
+      </div>
+      <div>
+        <div class="text-lg font-semibold text-green-600">Vegan</div>
+        <div>100% 🌱</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back Button -->
+  <div class="text-center mb-12">
+    <a href="recipes.html" class="inline-block bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition">⬅ Back to Recipes</a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white text-center py-6 text-sm text-gray-600 dark:bg-black dark:text-white">
+    🪴 Made with love & plants — VeganRecipe © 2025
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("darkToggle");
+    toggle.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+    });
+  </script>
+  <script>
+ const toggleButton = document.getElementById('darkToggle');
+  toggleButton.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>
